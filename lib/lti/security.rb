@@ -23,11 +23,7 @@ module Lti
   module Security
 
     def self.signed_post_params(params, url, key, secret, disable_lti_post_only=false)
-      if disable_lti_post_only
-        signed_post_params_frd(params, url, key, secret)
-      else
-        generate_params_deprecated(params, url, key, secret)
-      end
+      signed_post_params_frd(params, url, key, secret)
     end
 
     # This is the correct way to sign the params, but in the name of not breaking things, we are using the
