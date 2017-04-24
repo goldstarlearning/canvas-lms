@@ -9,8 +9,11 @@ services:
       - redis
     environment:
       RAILS_ENV: development
+      VIRTUAL_HOST: canvas
     ports:
       - "3000:80"
+    extra_hosts:
+      - "auth:10.200.10.1"
 
   # jobs:
   #   <<: *WEB
